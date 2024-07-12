@@ -15,3 +15,112 @@ public class Recursion1 {
         printnumb(n);
     }
 }
+
+// Q2. Create Numbers from from 1 to 5
+
+public class Recursion1 {
+    public static void printnumb(int n) {
+        if(n == 6) {
+            return;
+        }
+
+        System.out.println(n);
+        printnumb(n+1);
+    }
+
+    public static void main(String[] args) {
+        int n = 1;
+        printnumb(n);
+    }
+}
+
+// Q3. Print sum of n natural numbers
+
+public class Recursion1 {
+    public static void printSum(int i, int n, int sum) {
+        if(i == n) {
+            sum += i;
+            System.out.println(sum);
+            return;
+        }
+        sum += i;
+        printSum(i+1, n, sum);
+    }
+    public static void main(String[] args) {
+        
+        printSum(1, 5, 0);
+    }
+}
+
+// Q4. print Factorial og a number n
+
+public class Recursion1 {
+    public static int calcFactorial (int n) {
+
+        if(n == 0 || n == 1) {
+            return 1;
+        }
+
+        int factorial_nm1 = calcFactorial(n-1);
+        int factorial_n = n * factorial_nm1;
+        return factorial_n;
+    }
+    public static void main(String[] args) {
+        int n = 5;
+        int ans = calcFactorial(n);
+        System.out.println(ans);
+
+    }
+}
+
+
+// Q5. Print the fibonacci sequence till nth term
+
+public class Recursion1 {
+    public static void printFib(int a, int b, int n) {
+
+        if(n == 0){
+            return;
+        }
+    
+        int c = a + b;
+        System.out.println(c);
+        printFib(b, c, n-1);
+    
+    }
+    public static void main(String[] args) {
+        int a = 0, b = 1;
+        System.out.println(a);
+        System.out.println(b);
+        int n = 7;
+        printFib(a, b, n-2);
+
+
+    }
+}
+
+
+// Q6. print X to the power n (stack height = n) 
+
+public class Recursion1 {
+    public static int calcPower(int x, int n) {
+
+        if(n == 0) {
+            return 1;
+        }
+
+        if(x == 0) {
+            return 0;
+        }
+
+        int xpowernm1 = calcPower(x, n-1);
+        int xpowern = x * xpowernm1;
+        return xpowern;
+    }
+    public static void main(String[] args) {
+        int x = 2, n = 5;
+        int ans = calcPower(x, n);
+        System.out.println(ans);
+    }
+}
+
